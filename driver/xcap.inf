@@ -1,0 +1,63 @@
+; XCAP HDMI capture driver
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = XCapture
+ClassGuid   = {c2a1f1d4-6f0e-4b7e-8f5a-2b1c9d3e7a15}
+Provider    = %Mfg%
+CatalogFile = xcap.cat
+DriverVer = 11/23/2026,1.4.0.0
+PnpLockdown = 1
+
+[ClassInstall32]
+AddReg = ClassReg
+[ClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-5
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[SourceDisksNames]
+1 = %Disk%
+[SourceDisksFiles]
+xcap.sys = 1
+
+[Manufacturer]
+%Mfg% = XCap, NTamd64.10.0...19041
+
+[XCap.NTamd64.10.0...19041]
+%Dev% = XCap_Install, PCI\VEN_10EE&DEV_A15C
+
+[XCap_Install.NT]
+CopyFiles = XCap_Files
+[XCap_Files]
+xcap.sys
+
+[XCap_Install.NT.HW]
+AddReg = XCap_HwReg
+[XCap_HwReg]
+HKR,,Security,,"D:P(A;;GA;;;SY)(A;;GA;;;BA)(A;;GRGW;;;IU)"
+HKR,Interrupt Management,,0x00000010
+HKR,Interrupt Management\MessageSignaledInterruptProperties,,0x00000010
+HKR,Interrupt Management\MessageSignaledInterruptProperties,MSISupported,0x00010001,1
+HKR,Interrupt Management\MessageSignaledInterruptProperties,MessageNumberLimit,0x00010001,1
+
+[XCap_Install.NT.Services]
+AddService = xcap, 0x00000002, XCap_Service
+[XCap_Service]
+DisplayName   = %Dev%
+ServiceType   = 1
+StartType     = 3
+ErrorControl  = 1
+ServiceBinary = %13%\xcap.sys
+
+[XCap_Install.NT.Wdf]
+KmdfService = xcap, XCap_Wdf
+[XCap_Wdf]
+KmdfLibraryVersion = 1.31
+
+[Strings]
+Mfg = "XDMA-DLSS"
+Dev = "XCAP HDMI Capture (AXAU15)"
+Disk = "XCAP driver"
+ClassName = "XCAP capture devices"

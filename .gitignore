@@ -1,0 +1,18 @@
+# build outputs and anything that must not be published
+*.bit
+*.mcs
+*.xsa
+qspi*.bin
+*.pfx
+*.cer
+sign/
+out/
+obj/
+bspx/
+*.log
+*.frm
+*.pcm
+*.raw
+*.v210
+.DS_Store
+._*
