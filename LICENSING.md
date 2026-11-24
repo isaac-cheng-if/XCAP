@@ -7,6 +7,7 @@ XCAP 的源码公开，**个人、学习、研究等非商业用途免费**，**
 | 部分 | 许可 | 说明 |
 |---|---|---|
 | XCAP 的全部内容：FPGA RTL 与仿真、块设计与约束、MicroBlaze 固件、Windows 驱动、主机接收库、`xcap_test` / `xcap_play` 等工具、脚本、文档与图片 | [PolyForm Noncommercial 1.0.0](LICENSE.md) | 可以自用、修改、分享；不得用于任何商业目的 |
+| Veyra 侧：[Veyra fork](https://github.com/isaac-cheng-if/Veyra-NRVideo/tree/xcap) 里的 XCAP 采集源，以及随 Veyra 分发的接收库拷贝 `third_party/xcap/`（取自本仓库 `host/`、`common/`） | GPL-3.0（沿用 Veyra） | 属于 Veyra 的一部分，按 Veyra 的许可发布；本仓库里的 `host/`、`common/` 仍为 PolyForm Noncommercial |
 | `fpga/hdmi/fw/dp159.*`、`fpga/hdmi/fw/idt_8t49n24x.*` | MIT（AMD/Xilinx 原始声明保留在文件中） | 第三方代码，见 [`fpga/hdmi/fw/THIRD_PARTY.md`](fpga/hdmi/fw/THIRD_PARTY.md) |
 
 ## 什么算商业使用
