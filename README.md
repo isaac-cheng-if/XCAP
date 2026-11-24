@@ -6,9 +6,9 @@
 
 ### 纯 FPGA 打造，4K60 HDR 10-bit 微秒级直达内存，让 PS5 的 30 帧变成 4K 120 Hz
 
-**最后一个像素到达 → 约 10 µs 进内存 · 4:2:2 10-bit 无压缩 · 逐片 CRC 校验 0 错误 · 杜比全景声位流直通 · 完全开源**
+**最后一个像素到达 → 约 10 µs 进内存 · 4:2:2 10-bit 无压缩 · 逐片 CRC 校验 0 错误 · 杜比全景声位流直通 · 源码公开**
 
-*An open FPGA HDMI capture card (Artix UltraScale+, PCIe Gen3 x4 DMA) that lands every 4K60 HDR frame in PC memory ~10 µs after its last pixel — uncompressed 4:2:2 10-bit, CRC-checked, with Dolby Atmos bitstream passthrough — built to frame-generate console games to 4K 120 Hz with as little added latency as possible.*
+*A source-available FPGA HDMI capture card (Artix UltraScale+, PCIe Gen3 x4 DMA) that lands every 4K60 HDR frame in PC memory ~10 µs after its last pixel — uncompressed 4:2:2 10-bit, CRC-checked, with Dolby Atmos bitstream passthrough — built to frame-generate console games to 4K 120 Hz with as little added latency as possible.*
 
 </div>
 
@@ -21,7 +21,7 @@
 - ✅ **每一帧都可验证。** 帧头帧尾带序号、时间戳、逐片 CRC-32C 和重复帧标志：丢没丢帧、坏没坏数据、是不是重复帧，软件一看就知道。长时间运行 0 丢帧、0 CRC 错误。
 - 🔊 **杜比全景声原样进电脑、原样出功放。** TrueHD/MAT、E-AC-3 JOC 位流与 7.1 PCM 都能采集并直通，延迟自动跟随画面。竞品官网最多写到 LPCM。
 - 🧠 **按你的电视合成 EDID。** PS5 看到的 HDR 亮度、声道、杜比格式和直连电视时一致，而不是采集卡的固定 EDID。
-- 🔓 **从 RTL 到驱动全部开源。** FPGA、固件、Windows 驱动、主机库、补帧集成都在这里，没有黑盒。
+- 🔓 **从 RTL 到驱动源码全部公开。** FPGA、固件、Windows 驱动、主机库、补帧集成都在这里，没有黑盒；个人自用免费。
 
 ## 和市售采集卡比
 
@@ -37,7 +37,7 @@
 | HDMI 输入 / 环出 | 2.0 / 2.0 | 2.0 / 2.0 | 2.0 / 2.0 | 2.1 / 2.1 | 2.1 / 2.1 |
 | 最高采集 | 4K60 HDR10（目前只做 3840×2160） | 4K60 HDR、1440p144、1080p240 | 4K60 HDR10 | 4K60 HDR、1440p144 HDR、1080p240 | 4K144 SDR；HDR 最高 4K30 |
 | 最高环出 | 4K60 HDR10 | 4K60 HDR、1440p144、1080p240 | 4K60 HDR10 | 8K60、4K240，含 VRR / ALLM | 4K144、1440p240，含 VRR |
-| 开源 | ✅ RTL、固件、驱动、主机库全部开源 | 否 | 否 | 否 | 否 |
+| 源码 | ✅ RTL、固件、驱动、主机库全部公开 | 不公开 | 不公开 | 不公开 | 不公开 |
 | 驱动 / 系统 | Windows 11，测试签名 KMDF | Windows 10+ | Windows 10+ | Windows | Windows / macOS（Mac 上 HDR 转 SDR） |
 | HDCP | 不支持（PS5 需关闭） | 不支持 | 不支持 | 不支持 | 不支持 |
 | 价格 | 硬件约 ¥6,000–8,000，另需 AMD HDMI IP 授权 | 官网未标价 | 官网未标价 | €299.99（Elgato 葡萄牙官网） | US$249.99（Elgato 美国官网） |
@@ -110,4 +110,6 @@ flowchart LR
 
 ## 许可
 
-GPL-3.0（见 [LICENSE](LICENSE)），与 Veyra 一致。第三方文件的来源见 [`fpga/hdmi/fw/THIRD_PARTY.md`](fpga/hdmi/fw/THIRD_PARTY.md)。不含任何位流、授权 IP、厂商 BSP、签名证书或个人设备数据。
+**个人自用、学习、研究免费，禁止商业使用。** 主体采用 [PolyForm Noncommercial 1.0.0](LICENSE.md)；被 Veyra 编译进去的主机接收库保持 GPL-3.0，第三方固件文件保持 MIT。各部分的划分、什么算商业使用、如何取得商业授权，见 [LICENSING.md](LICENSING.md)。
+
+不含任何位流、授权 IP、厂商 BSP、签名证书或个人设备数据。

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // User-mode access to the XCAP capture driver. No dependency beyond Win32.
 #pragma once
 #include <windows.h>
