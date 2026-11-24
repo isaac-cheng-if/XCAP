@@ -32,7 +32,7 @@ PS5 必须关闭 HDCP（设置 → 系统 → HDMI），否则约每 1.8 秒断�
 `xcap_test hdmi` 显示固件状态和当前信号。Veyra 设备列表里有 “XCAP HDMI 采集卡” 和 “XCAP 测试图案 4K60” 两项。
 
 ## Veyra
-5090 主机 `C:\dev\veyra-xcap\xcap_play.exe` 一键启动（官方 2.2.0 的运行库 + 我们编译的程序，数据目录独立）。`veyra/build_full.bat` 编完整界面，`veyra/build_probe.bat` 只编采集部分。
+基于上游 Veyra 2.2.1（main `bc59d45`）。5090 主机 `C:\dev\veyra-xcap-221\Veyra_XCAP.cmd` 一键启动（`--xcap hdmi,120,2 --fullscreen`：等 PS5 信号、VFG 高质量、目标 120 fps、全屏，数据目录独立）。`veyra/build_full.bat` 编完整界面（源码 `C:\dev\veyra221`，构建 `C:\dev\veyra221-full`），`veyra/deploy.cmd` 以上一版部署目录为底换上新程序、QML、着色器并用 windeployqt 补齐 Qt 模块，`veyra/build_probe.bat` 只编采集部分。
 
 ## 音频与 HDR（hw 00030100、驱动 1.2.0.0、接口 00020000）
 音频走第二个 C2H 通道：2048 字节定长包（头 'XCAU'、序号、时间戳，最多 508 个字），满包或约 0.8 ms 发一次，与视频互不阻塞。
