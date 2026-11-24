@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 // XCAP hardware contract shared by the FPGA, the Windows driver and the host library.
 // Keep in sync with fpga/rtl/xcap_regs.sv and fpga/rtl/xcap_framer.sv.
 #pragma once
