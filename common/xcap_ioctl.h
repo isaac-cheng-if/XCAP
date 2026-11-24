@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // XCAP driver <-> user mode contract.
 #pragma once
 #include "xcap_hw.h"

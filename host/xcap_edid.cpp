@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "xcap_edid.h"
 #include "xcap.h"
 #include <setupapi.h>

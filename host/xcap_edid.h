@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // Builds the EDID the card shows to the HDMI source out of the one of the TV behind this PC, so that a
 // console sees the luminance, the speakers and the audio formats of the real output chain while the
 // video part stays what the card can receive (HDMI 2.0, 4K60 4:2:2 HDR10).

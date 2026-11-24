@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "xcap_sim.h"
 #include "xcap.h"
 #include <timeapi.h>
