@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 // A card made of threads: same control codes as the driver, for trying the rest of the chain on a PC
 // without the hardware. Active only when the environment variable XCAP_SIM names a control file
 // (key=value words, read again all the time): lock=1 hdr=1 rate=59940 repeat=2 step=12 audio=2 carrier=<file>

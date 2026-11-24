@@ -110,6 +110,6 @@ flowchart LR
 
 ## 许可
 
-**个人自用、学习、研究免费，禁止商业使用。** 主体采用 [PolyForm Noncommercial 1.0.0](LICENSE.md)；被 Veyra 编译进去的主机接收库保持 GPL-3.0，第三方固件文件保持 MIT。各部分的划分、什么算商业使用、如何取得商业授权，见 [LICENSING.md](LICENSING.md)。
+**个人自用、学习、研究免费，禁止商业使用。** 全部采用 [PolyForm Noncommercial 1.0.0](LICENSE.md)（两个 AMD 来源的第三方固件文件保留原 MIT 声明）。各部分的划分、什么算商业使用、如何取得商业授权，见 [LICENSING.md](LICENSING.md)。
 
 不含任何位流、授权 IP、厂商 BSP、签名证书或个人设备数据。

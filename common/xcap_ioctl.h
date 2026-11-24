@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 // XCAP driver <-> user mode contract.
 #pragma once
 #include "xcap_hw.h"
